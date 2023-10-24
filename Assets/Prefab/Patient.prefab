@@ -2723,6 +2723,8 @@ GameObject:
   - component: {fileID: -1595311464491598542}
   - component: {fileID: 1382253185}
   - component: {fileID: 1969737379095814115}
+  - component: {fileID: 14879875}
+  - component: {fileID: 14879876}
   m_Layer: 0
   m_Name: Patient
   m_TagString: Untagged
@@ -2759,7 +2761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actions: []
-  currentAction: {fileID: 1969737379095814115}
+  currentAction: {fileID: 0}
 --- !u!195 &1382253185
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2794,16 +2796,66 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a23fee9498c24d4681cc28f143a1d80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actionName: Action
+  actionName: GoToWaitingRoom
   cost: 1
   target: {fileID: 0}
-  targetTag: 
+  targetTag: WaitingArea
   duration: 0
-  preConditions: []
+  preConditions:
+  - key: hasRegistered
+    value: 0
   afterEffects:
   - key: isWaiting
     value: 1
   agent: {fileID: 1382253185}
+  running: 0
+--- !u!114 &14879875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7881807149238628900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faac02b7c6f91a246a8ca98dd1f7d820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: GoToHospital
+  cost: 1
+  target: {fileID: 0}
+  targetTag: Door
+  duration: 5
+  preConditions: []
+  afterEffects:
+  - key: hasArrived
+    value: 0
+  agent: {fileID: 0}
+  running: 0
+--- !u!114 &14879876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7881807149238628900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da525f0128d895048a90e7b9027bb500, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: Register
+  cost: 1
+  target: {fileID: 0}
+  targetTag: Reception
+  duration: 2
+  preConditions:
+  - key: hasArrived
+    value: 0
+  afterEffects:
+  - key: hasRegistered
+    value: 0
+  agent: {fileID: 0}
   running: 0
 --- !u!1 &7927236269272520591
 GameObject:

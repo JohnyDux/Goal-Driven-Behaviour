@@ -123,34 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 5f2314f7955bf4c198b8df8eeeb0c822, type: 2}
---- !u!1 &14879870 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7881807149238628900, guid: d36c43225f9391e4c8810c98eb7ef85e, type: 3}
-  m_PrefabInstance: {fileID: 1837057383}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &14879875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 14879870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faac02b7c6f91a246a8ca98dd1f7d820, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actionName: GoToHospital
-  cost: 1
-  target: {fileID: 0}
-  targetTag: Door
-  duration: 2
-  preConditions: []
-  afterEffects:
-  - key: hasArrived
-    value: 0
-  agent: {fileID: 0}
-  running: 0
 --- !u!1 &34730032
 GameObject:
   m_ObjectHideFlags: 0
@@ -1702,7 +1674,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patientPrefab: {fileID: 7881807149238628900, guid: d36c43225f9391e4c8810c98eb7ef85e, type: 3}
-  numPatients: 0
+  numPatients: 1
 --- !u!1001 &1114647718
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3877,30 +3849,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -1595311464491598542, guid: d36c43225f9391e4c8810c98eb7ef85e, type: 3}
-      propertyPath: currentAction
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1969737379095814115, guid: d36c43225f9391e4c8810c98eb7ef85e, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 1000317771}
-    - target: {fileID: 1969737379095814115, guid: d36c43225f9391e4c8810c98eb7ef85e, type: 3}
-      propertyPath: targetTag
-      value: WaitingArea
-      objectReference: {fileID: 0}
-    - target: {fileID: 1969737379095814115, guid: d36c43225f9391e4c8810c98eb7ef85e, type: 3}
-      propertyPath: actionName
-      value: GoToWaitingRoom
-      objectReference: {fileID: 0}
-    - target: {fileID: 1969737379095814115, guid: d36c43225f9391e4c8810c98eb7ef85e, type: 3}
-      propertyPath: preConditions.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1969737379095814115, guid: d36c43225f9391e4c8810c98eb7ef85e, type: 3}
-      propertyPath: preConditions.Array.data[0].key
-      value: hasArrived
-      objectReference: {fileID: 0}
     - target: {fileID: 7880970886039044016, guid: d36c43225f9391e4c8810c98eb7ef85e, type: 3}
       propertyPath: m_RootOrder
       value: 1
