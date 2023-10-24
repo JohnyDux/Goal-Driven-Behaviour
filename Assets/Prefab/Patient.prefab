@@ -2720,11 +2720,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7880970886039044016}
+  - component: {fileID: -1595311464491598542}
   - component: {fileID: 1382253185}
-  - component: {fileID: 1382253186}
-  - component: {fileID: 1382253189}
-  - component: {fileID: 1382253190}
-  - component: {fileID: 1382253191}
+  - component: {fileID: 1969737379095814115}
   m_Layer: 0
   m_Name: Patient
   m_TagString: Untagged
@@ -2748,6 +2746,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-1595311464491598542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7881807149238628900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d80ed5b148417224a9ffb0d9e0385944, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actions: []
+  currentAction: {fileID: 1969737379095814115}
 --- !u!195 &1382253185
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2770,7 +2782,7 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1382253186
+--- !u!114 &1969737379095814115
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2779,83 +2791,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 7881807149238628900}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 060f032869be8ca45ba3c0916c0ac932, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a23fee9498c24d4681cc28f143a1d80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actions: []
-  currentAction: {fileID: 0}
---- !u!114 &1382253189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7881807149238628900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf34a0971424349429f60ba828d46851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actionName: GoToWaitingRoom
-  cost: 1
-  target: {fileID: 0}
-  targetTag: WaitingArea
-  duration: 0
-  preConditions:
-  - key: hasRegistered
-    value: 0
-  afterEffects:
-  - key: isWaiting
-    value: 0
-  agent: {fileID: 1382253185}
-  running: 0
---- !u!114 &1382253190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7881807149238628900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce444510f6819fe4f9e3b7824de7ffe4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actionName: GoToHospital
-  cost: 1
-  target: {fileID: 0}
-  targetTag: Door
-  duration: 2
-  preConditions: []
-  afterEffects:
-  - key: hasArrived
-    value: 0
-  agent: {fileID: 1382253185}
-  running: 0
---- !u!114 &1382253191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7881807149238628900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aead3a481f12d18439cade6f081a4b85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actionName: Register
+  actionName: Action
   cost: 1
   target: {fileID: 0}
   targetTag: 
-  duration: 5
-  preConditions:
-  - key: hasArrived
-    value: 0
+  duration: 0
+  preConditions: []
   afterEffects:
-  - key: hasRegistered
-    value: 0
-  agent: {fileID: 0}
+  - key: isWaiting
+    value: 1
+  agent: {fileID: 1382253185}
   running: 0
 --- !u!1 &7927236269272520591
 GameObject:
